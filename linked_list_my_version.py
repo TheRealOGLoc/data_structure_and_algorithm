@@ -106,6 +106,3 @@ ll.append("data6")
 ll.display()
 
 print(ll.find_with_data("data4"))
-
-        
-
