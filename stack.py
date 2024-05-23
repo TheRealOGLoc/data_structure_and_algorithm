@@ -1,3 +1,6 @@
+# FILO First in, Last out
+# In python, implement stack by using deque is more efficient than using the array
+# Since the deque use the linked list
 from collections import deque
 class Stack():
     def __init__(self) -> None:
