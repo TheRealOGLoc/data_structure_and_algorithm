@@ -1,3 +1,9 @@
+# Time Complexity:
+# Access: O(n)
+# Find: O(n)
+# Insert: O(1) at beginning, O(n) at end
+# Delete: O(1) at beginning, O(n) at end
+
 class Node():
     def __init__(self, data) -> None:
         self.data = data
