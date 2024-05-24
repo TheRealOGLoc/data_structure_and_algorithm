@@ -1,3 +1,6 @@
+# best case: O(n), everything is sorted
+# worst case: O(n^2), everything needs to be sorted
+
 def bubble_sort(array):
     length = len(array)
     sorted = False
