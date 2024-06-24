@@ -5,8 +5,27 @@ class TreeNode:
         self.parent = None
 
     def add_child(self, child):
-        self.parent = self
+        child.parent = self
         self.children.append(child)
+
+    def get_level(self):
+        level = 0
+        parent = self.parent
+        while parent:
+            level += 1
+            parent = parent.parent
+        return level
+
+    def print_tree(self):
+        level = self.get_level()
+        prefix = level * "   "
+        if self.parent:
+            print(f'{prefix}|__{self.data}')
+        else:
+            print(self.data)
+        if self.children:
+            for child in self.children:
+                child.print_tree()
 
 def build_product_tree():
     root = TreeNode("Electronics")
@@ -33,3 +52,4 @@ def build_product_tree():
 
 if __name__ == "__main__":
     root = build_product_tree()
+    root.print_tree()
