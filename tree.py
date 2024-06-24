@@ -4,10 +4,13 @@ class TreeNode:
         self.children = []
         self.parent = None
 
+    # append the data to the children list
     def add_child(self, child):
+        # set the child's parent as self
         child.parent = self
         self.children.append(child)
 
+    # get current tree node level
     def get_level(self):
         level = 0
         parent = self.parent
