@@ -1,3 +1,5 @@
+# FIFO, First In First Out, like a pipe
+
 from collections import deque
 
 class Queue():
