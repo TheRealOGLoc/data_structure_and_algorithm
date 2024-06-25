@@ -26,7 +26,7 @@ class BinarySearchTreeNode:
         if self.data == data: #binary search tree can not have same value
             return 
         
-        if data < self.left:
+        if data < self.data:
             if self.left:
                 self.left.add_child(data)
             else:
@@ -37,3 +37,40 @@ class BinarySearchTreeNode:
             else:
                 self.right = BinarySearchTreeNode(data)
     
+    def in_order_traversal(self, root):
+        result = []
+        if root:
+            result += self.in_order_traversal(root.left) # concatenate two list together
+            result.append(root.data)
+            result += self.in_order_traversal(root.right)
+        return result
+
+    def pre_order_traversal(self, root):
+        result = []
+        if root:
+            result.append(root.data)
+            result += self.pre_order_traversal(root.left)
+            result += self.pre_order_traversal(root.right)
+        return result
+    
+    def post_order_traversal(self, root):
+        result =[]
+        if root:
+            result += self.post_order_traversal(root.left)
+            result += self.post_order_traversal(root.right)
+            result.append(root.data)
+        return result
+    
+def create_binary_tree():
+    root = BinarySearchTreeNode(27)
+    root.add_child(14)
+    root.add_child(35)
+    root.add_child(10)
+    root.add_child(19)
+    root.add_child(31)
+    root.add_child(42)
+    print(root.in_order_traversal(root))
+
+if __name__ == "__main__":
+    create_binary_tree()
+
