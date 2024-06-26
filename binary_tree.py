@@ -61,6 +61,16 @@ class BinarySearchTreeNode:
             result.append(root.data)
         return result
     
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        return self.right.find_max()
+    
+    def find_min(self):
+        if self.left is None:
+            return self.data
+        return self.left.find_min()
+    
 def create_binary_tree():
     root = BinarySearchTreeNode(27)
     root.add_child(14)
