@@ -15,3 +15,6 @@ def quick_sort(arr):
             items_lower.append(item)
 
     return quick_sort(items_lower) + pivot + quick_sort(items_greater)
+
+# worst case: O(n^2)
+# average and best case: O(n * logn)
